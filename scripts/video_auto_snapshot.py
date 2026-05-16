@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import platform
 import shutil
 import subprocess
 import sys
@@ -41,6 +42,45 @@ class Shot:
 def die(msg: str) -> None:
     print(f"[error] {msg}", file=sys.stderr)
     raise SystemExit(1)
+
+
+def install_hint(tool: str) -> str:
+    system = platform.system().lower()
+    if tool in {"ffmpeg", "ffprobe"}:
+        if system == "darwin":
+            return f"Install with: brew install ffmpeg"
+        if system == "linux":
+            return f"Install with your package manager, for example: sudo apt-get install ffmpeg"
+        if system == "windows":
+            return "Install FFmpeg and add ffmpeg.exe / ffprobe.exe to PATH"
+    if tool == "python3":
+        if system == "darwin":
+            return "Install with: brew install python"
+        if system == "linux":
+            return "Install with your package manager, for example: sudo apt-get install python3"
+        if system == "windows":
+            return "Install Python 3 from python.org and add it to PATH"
+    return "Install the missing dependency and ensure it is available on PATH"
+
+
+def check_required_dependencies() -> None:
+    missing = []
+    if not shutil.which("python3"):
+        missing.append("python3")
+    if not shutil.which("ffmpeg"):
+        missing.append("ffmpeg")
+    if not shutil.which("ffprobe"):
+        missing.append("ffprobe")
+    if missing:
+        print("[error] Missing required dependency(s): " + ", ".join(missing), file=sys.stderr)
+        for tool in missing:
+            print(f"[hint] {tool}: {install_hint(tool)}", file=sys.stderr)
+        raise SystemExit(1)
+
+
+def print_runtime_notes() -> None:
+    if not has_cv2():
+        print("[info] OpenCV not found; person-prioritized frame selection will fall back to uniform sampling.", file=sys.stderr)
 
 
 def run(cmd: List[str]) -> str:
@@ -170,6 +210,8 @@ def make_contact_sheet(images: List[Path], output_path: Path) -> None:
 
 
 def main() -> int:
+    check_required_dependencies()
+    print_runtime_notes()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("video", nargs="?", help="Local video path")
     parser.add_argument("--output-dir", help="Directory for extracted frames")

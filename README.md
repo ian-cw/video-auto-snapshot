@@ -33,6 +33,13 @@ Or clone/copy this repository into the skills directory used by your agent runti
 $video-auto-snapshot /path/to/video.mp4
 ```
 
+### Requirements
+
+- Python 3
+- FFmpeg
+- FFprobe
+- Optional: OpenCV for person-prioritized frame selection
+
 If you do not pass an output directory, the skill creates:
 
 ```text
@@ -93,6 +100,13 @@ npx skills add ian-cw/video-auto-snapshot
 ```text
 $video-auto-snapshot /path/to/video.mp4
 ```
+
+### 依赖
+
+- Python 3
+- FFmpeg
+- FFprobe
+- 可选：OpenCV，用于有人像优先的帧选择
 
 如果不传输出目录，会自动创建：
 
