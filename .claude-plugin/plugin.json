@@ -1,0 +1,5 @@
+{
+  "name": "video-auto-snapshot",
+  "description": "Sample local videos into evenly spaced screenshots with person-prioritized frame selection.",
+  "version": "0.1.0"
+}

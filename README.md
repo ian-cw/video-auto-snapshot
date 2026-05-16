@@ -1,5 +1,7 @@
 # Video Auto Snapshot / 视频自动截图
 
+[![skills.sh](https://skills.sh/b/ian-cw/video-auto-snapshot)](https://skills.sh/ian-cw/video-auto-snapshot)
+
 [English](#english) | [中文](#中文)
 
 ## English
@@ -7,7 +9,7 @@
 Sample a local video, read its duration, and export 10 evenly spaced screenshots.
 Prefer frames with people or faces when available.
 
-This skill is designed for local video workflows in Codex:
+This repo is designed to be usable by compatible agents and skill runners:
 
 - accept a local path or uploaded video
 - probe duration
@@ -17,11 +19,13 @@ This skill is designed for local video workflows in Codex:
 
 ### Install
 
-Copy the folder into your Codex skills directory:
+Install from `skills.sh` if your agent supports it:
 
 ```bash
-~/.codex/skills/video-auto-snapshot
+npx skills add ian-cw/video-auto-snapshot
 ```
+
+Or clone/copy this repository into the skills directory used by your agent runtime.
 
 ### Use
 
@@ -66,7 +70,7 @@ Selected frames:
 
 用于处理本地视频：读取时长，按均匀间隔导出 10 张截图，并在可用时优先选择有人像或人脸的画面。
 
-这个 skill 适合在 Codex 里做本地视频流程：
+这个仓库面向兼容的 agent 和 skill runner：
 
 - 传入本地路径或上传视频
 - 先探测时长
@@ -76,11 +80,13 @@ Selected frames:
 
 ### 安装
 
-把整个文件夹复制到 Codex skills 目录：
+如果你的 agent 支持 `skills.sh`，可以直接安装：
 
 ```bash
-~/.codex/skills/video-auto-snapshot
+npx skills add ian-cw/video-auto-snapshot
 ```
+
+或者把这个仓库克隆/复制到你所用 agent 的 skills 目录。
 
 ### 使用
 
