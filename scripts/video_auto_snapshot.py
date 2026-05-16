@@ -77,6 +77,10 @@ def check_required_dependencies() -> None:
             print(f"[hint] {tool}: {install_hint(tool)}", file=sys.stderr)
         if platform.system().lower() == "darwin":
             print("[hint] macOS shortcut: brew install python ffmpeg", file=sys.stderr)
+        elif platform.system().lower() == "linux":
+            print("[hint] Linux shortcut: sudo apt-get install python3 ffmpeg", file=sys.stderr)
+        elif platform.system().lower() == "windows":
+            print("[hint] Windows shortcut: install Python 3 and FFmpeg, then add them to PATH", file=sys.stderr)
         raise SystemExit(1)
 
 
