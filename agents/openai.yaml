@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Auto Snapshot"
+  short_description: "Auto-snapshot local videos"
+  default_prompt: "Use $video-auto-snapshot to sample a local video, read its duration, and export 10 evenly spaced screenshots with person-prioritized frame selection."

@@ -1,0 +1,5 @@
+feat: add video-auto-snapshot skill for local video frame sampling
+
+Create a Codex skill that reads local video duration, exports 10 evenly spaced
+screenshots, prefers person/face frames when available, and writes outputs into
+an organized per-video folder structure.
