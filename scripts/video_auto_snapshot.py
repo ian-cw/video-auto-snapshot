@@ -48,9 +48,9 @@ def install_hint(tool: str) -> str:
     system = platform.system().lower()
     if tool in {"ffmpeg", "ffprobe"}:
         if system == "darwin":
-            return f"Install with: brew install ffmpeg"
+            return "Install with: brew install ffmpeg"
         if system == "linux":
-            return f"Install with your package manager, for example: sudo apt-get install ffmpeg"
+            return "Install with your package manager, for example: sudo apt-get install ffmpeg"
         if system == "windows":
             return "Install FFmpeg and add ffmpeg.exe / ffprobe.exe to PATH"
     if tool == "python3":
@@ -75,6 +75,8 @@ def check_required_dependencies() -> None:
         print("[error] Missing required dependency(s): " + ", ".join(missing), file=sys.stderr)
         for tool in missing:
             print(f"[hint] {tool}: {install_hint(tool)}", file=sys.stderr)
+        if platform.system().lower() == "darwin":
+            print("[hint] macOS shortcut: brew install python ffmpeg", file=sys.stderr)
         raise SystemExit(1)
 
 
