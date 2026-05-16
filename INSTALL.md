@@ -36,6 +36,5 @@ sudo apt-get install python3 ffmpeg
 
 ### Windows shortcut
 
-- Install Python 3 from [python.org](https://www.python.org/downloads/)
-- Install FFmpeg from [ffmpeg.org](https://ffmpeg.org/download.html)
-- Add both executables to `PATH`
+1. Install Python 3 from [python.org](https://www.python.org/downloads/) and check "Add Python to PATH" during setup.
+2. Install FFmpeg from [ffmpeg.org](https://ffmpeg.org/download.html) or a trusted Windows build, then add the `bin` folder to `PATH`.

@@ -80,7 +80,8 @@ def check_required_dependencies() -> None:
         elif platform.system().lower() == "linux":
             print("[hint] Linux shortcut: sudo apt-get install python3 ffmpeg", file=sys.stderr)
         elif platform.system().lower() == "windows":
-            print("[hint] Windows shortcut: install Python 3 and FFmpeg, then add them to PATH", file=sys.stderr)
+            print("[hint] Windows shortcut: install Python 3 from python.org and check 'Add Python to PATH'.", file=sys.stderr)
+            print("[hint] Windows shortcut: install FFmpeg, then add its bin folder to PATH.", file=sys.stderr)
         raise SystemExit(1)
 
 
