@@ -6,8 +6,7 @@
 
 ## English
 
-Sample a local video, read its duration, and export 10 evenly spaced screenshots.
-Prefer frames with people or faces when available.
+Extract 10 evenly spaced screenshots from a local video, with person-aware frame selection when available.
 
 This repo is designed to be usable by compatible agents and skill runners:
 
@@ -75,7 +74,7 @@ Selected frames:
 
 ## 中文
 
-用于处理本地视频：读取时长，按均匀间隔导出 10 张截图，并在可用时优先选择有人像或人脸的画面。
+从本地视频中导出 10 张均匀分布的截图，并在可用时优先选择有人像或人脸的画面。
 
 这个仓库面向兼容的 agent 和 skill runner：
 
